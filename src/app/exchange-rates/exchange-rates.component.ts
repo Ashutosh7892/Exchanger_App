@@ -9,6 +9,7 @@ import { ApiService } from '../Services/api.service';
 export class ExchangeRatesComponent implements OnInit {
   protected exchangeRatesData = {};
   protected objectKeys:any;
+  protected currencyValue = "$00"
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {   
@@ -34,9 +35,5 @@ export class ExchangeRatesComponent implements OnInit {
     },(error)=>{
       // Error handling code goes here!
     });
-   }
-
-   protected convertCurrency=(value)=>{
-      console.log("value========>",value);
    }
 }

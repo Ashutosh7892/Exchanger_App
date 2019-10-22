@@ -1,22 +1,26 @@
 
 <h2 class="text-center">Exchange Rates</h2><br>
 
-<div class="container text-center">
+<div class="container">
         <div class="row">
                 <div class="col-6">
+                    <label>Base Currency</label>
                         <select class="browser-default custom-select">
                             <option selected>USD</option>
                         </select>
                 </div>
                 <div class="col-6">
+                        <label>Convert to</label>
                         <select class="browser-default custom-select" (change)="currencyValue = $event.target.value">
                     
                             <option selected>Select Currency</option>
                             <option *ngFor="let item of objectKeys(exchangeRatesData.rates)" [value]="exchangeRatesData.rates[item] | currency:'USD':true">{{item}}</option>
                         </select>
                 </div>
+            </div><br>
+            <div class="text-center">
+                <p class="badge badge-primary p-3">{{currencyValue}}</p>
             </div>
-            <p>{{currencyValue}}</p>
     <ul class="list-group">
         <li *ngFor="let item of objectKeys(exchangeRatesData.rates)" class="list-group-item d-flex justify-content-between align-items-center">
                 {{item}}
